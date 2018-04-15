@@ -1,38 +1,45 @@
 package at.refugeescode.mp8Themorse;
 
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.swing.text.html.parser.Entity;
-import java.io.SequenceInputStream;
-import java.util.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
-@RequestMapping ("/morse")
+@RequestMapping("/morse")
 public class MorseEndpoint {
+    private final ResourceLoader resourceLoader;
+
+    public MorseEndpoint(ResourceLoader resourceLoader) {
+        this.resourceLoader = resourceLoader;
+    }
+
     @PostMapping
-    void get(){
-        List<String> letter = new ArrayList<>();
-        List<String> symbol = new ArrayList<>();
-        letter.add("a");
-        letter.add("b");
-        letter.add("c");
+    String get(@RequestBody String letter) {
+        return getMorseCode().get(letter);
+    }
 
-        symbol.add("1");
-        symbol.add("2");
-        symbol.add("3");
+    private Map<String, String> getMorseCode() {
+        Map<String, String> map = new HashMap<>();
+        //String path = "src/main/java/at/refugeescode/mp8Themorse/morseCode.txt";
+        Resource resource = resourceLoader.getResource("classpath:morseCode.txt");
+        try {
 
-        Map<String,String> map= new HashMap<>();
-        map.put(letter.get(0),symbol.get(0));
-
-        for (String s:letter) {
-            map.put(s,symbol.get(letter.indexOf(s)));
+            Files.lines(resource.getFile().toPath())
+                    .map(line -> line.split(","))
+                    .forEach(e -> map.put(e[0], e[1]));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        String val = map.get("a");
-
-
+        return map;
     }
 
 }
