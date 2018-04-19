@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/mp8-The-encoder/pom.xml" />
         <option value="$PROJECT_DIR$/mp8-The-morse/pom.xml" />
+        <option value="$PROJECT_DIR$/morse-encoder-UI/pom.xml" />
       </list>
     </option>
   </component>

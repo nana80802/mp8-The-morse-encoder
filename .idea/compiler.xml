@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="morse-encoder-UI" />
         <module name="mp8-The-encoder" />
         <module name="mp8-The-morse" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="morse-encoder-UI" target="9" />
       <module name="mp8-The-encoder" target="9" />
       <module name="mp8-The-morse" target="9" />
     </bytecodeTargetLevel>

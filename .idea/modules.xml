@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/morse-encoder-UI/morse-encoder-UI.iml" filepath="$PROJECT_DIR$/morse-encoder-UI/morse-encoder-UI.iml" />
       <module fileurl="file://$PROJECT_DIR$/mp8-The-encoder/mp8-The-encoder.iml" filepath="$PROJECT_DIR$/mp8-The-encoder/mp8-The-encoder.iml" />
       <module fileurl="file://$PROJECT_DIR$/mp8-The-morse/mp8-The-morse.iml" filepath="$PROJECT_DIR$/mp8-The-morse/mp8-The-morse.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/mp8-The-morse-encoder.iml" filepath="$PROJECT_DIR$/.idea/mp8-The-morse-encoder.iml" />

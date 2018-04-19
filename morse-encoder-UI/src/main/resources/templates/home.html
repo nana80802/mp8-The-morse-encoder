@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Morse UI</title>
+</head>
+<body>
+<h1>The Morse Encode</h1>
+
+    <h2 th:text="${ciphrttext}">000 111 000</h2>
+
+<form th:action="@{/}" th:object="${text}" method="post">
+
+    <label> Text Field: </label>
+        <input type="text" th:field="*{text}" />
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>

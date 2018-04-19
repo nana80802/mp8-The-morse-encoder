@@ -12,14 +12,14 @@ import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/encode")
-public class encoderEndPoint {
+public class EncoderEndPoint {
 
     private RestTemplate restTemplate;
 
     @Value("${morse.url}")
     private String morseUrl;
 
-    public encoderEndPoint(RestTemplate restTemplate) {
+    public EncoderEndPoint(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
